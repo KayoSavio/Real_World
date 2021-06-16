@@ -34,6 +34,7 @@ export default {
           commit("setUser", response.data.user);
         }
       } catch (e) {
+        console.log(e);
         console.error(e);
         throw e;
       }

@@ -33,11 +33,11 @@
               </li>
             </ul>
           </div>
-
-          <ArticlePreview>
-            v-for="article in globalArticles" :key="article.slug"
+          <ArticlePreview
+            v-for="(article, index) in globalArticles"
+            :key="article.slug + index"
             :article="article"
-          </ArticlePreview>
+          />
         </div>
 
         <div class="col-md-3">
@@ -63,6 +63,7 @@
 
 <script>
 import ArticlePreview from "../components/ArticlePreview.vue";
+
 export default {
   components: {
     ArticlePreview,
@@ -89,7 +90,7 @@ export default {
       return this.$store.getters["users/username"];
     },
   },
-  data: function () {
+  data() {
     return {
       articles: [
         {
@@ -98,12 +99,12 @@ export default {
           description: "Ever wonder how?",
           body: "It takes a Jacobian",
           tagList: ["dragons", "training"],
-          createdAt: "2016-02-18T03:22:56.637Z",
+          createdAt: "2019-02-18T03:22:56.637Z",
           updatedAt: "2016-02-18T03:48:35.824Z",
           favorited: false,
           favoritesCount: 0,
           author: {
-            username: "jake",
+            username: "Jake",
             bio: "I work at statefarm",
             image: "https://i.stack.imgur.com/xHWG8.jpg",
             following: false,
@@ -120,7 +121,7 @@ export default {
           favorited: false,
           favoritesCount: 0,
           author: {
-            username: "jhonny",
+            username: "Jake",
             bio: "I work at statefarm",
             image: "https://i.stack.imgur.com/xHWG8.jpg",
             following: false,

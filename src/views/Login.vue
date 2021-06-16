@@ -31,10 +31,7 @@
                 placeholder="Password"
               />
             </fieldset>
-            <button
-              @click.prevent="login"
-              class="btn btn-lg btn-primary pull-xs-right"
-            >
+            <button @click="login" class="btn btn-lg btn-primary pull-xs-right">
               Sign in
             </button>
           </form>
